@@ -7,12 +7,12 @@ The function works as follows:
 ```php
 jsonsql('SELECT id FROM json','{"id":"0","name":"Tom"},{"id":"1","name":"Tim"}');
 
-// => Return [0,1]
+// => Returns [0,1]
 
 
 jsonsql('SELECT name FROM json',array(array("id"=>0,"name"=>"Tom"),array("id"=>1,"name"=>"Tim")));
 
-// => Return ["Tom","Tim"]
+// => Returns ["Tom","Tim"]
 ```
 
-You can use JSON Strings or array. The function will decrypts it automatically. 
+You can use JSON Strings or array. The function will decrypts it automatically.
