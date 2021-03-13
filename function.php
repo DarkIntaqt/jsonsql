@@ -1,6 +1,6 @@
 <?php
 
-/* DarkIntaqt 2021 JSONSQL - (https://darkintaqt.com | https://github.com/darkintaqt)  */
+/* DarkIntaqt 2021 JSONSQL - (https://darkintaqt.com | https://github.com/DarkIntaqt/jsonsql)  */
 
 function jsonsql($sql = false, $json = null, $databasename = "json") {
 
@@ -55,7 +55,7 @@ function jsonsql($sql = false, $json = null, $databasename = "json") {
         if(str_word_count($sql,1,$c)[$n] != null) {
           $b = str_word_count($sql,1,$c)[$n];
         } else {
-          return "Invalid statement";
+          return "Row \"".str_word_count($sql,1,$c)[$n]."\" is empty or does not exist. ";
         }
         $a = [];
         foreach ($json as $key => $value) {
@@ -90,7 +90,33 @@ function jsonsql($sql = false, $json = null, $databasename = "json") {
     if(str_word_count(strtolower($sql),1,$c)[$n] != "from" || str_word_count(strtolower($sql),1,$c)[($n + 1)] != $databasename) {
       return "Unknown database: \"".str_word_count(strtolower($sql),1,$c)[($n + 1)]."\". Standard database name is \"json\". You can change the database name with the third argument: \"jsonsql(statement, json, DATABASENAME)\"";
     }
-    return json_encode($a);
+
+    $n++;$n++;
+
+
+    /* Backup Variables */
+
+    $x = $a;
+
+    $e = true;
+
+    while ($e == true) {
+      switch(str_word_count(strtolower($sql),1,$c)[$n]) {
+
+
+        /* WHERE CASE */
+
+        case "where":
+          $n++;
+          if(is_null($json[0][str_word_count($sql,1,$c)[$n]])) {
+            return "One or more where rows does not exists";
+          }
+          break;
+      }
+      $e = false;
+    }
+
+    return json_encode($a) . $e;
   } else {
     return "Unknown Method - Currently available methods are: \"SELECT\"";
   }

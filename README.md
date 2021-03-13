@@ -17,4 +17,4 @@ jsonsql('SELECT name FROM json',array(array("id"=>0,"name"=>"Tom"),array("id"=>1
 // => Returns ["Tom","Tim"]
 ```
 
-You can use JSON Strings or array. The function will decrypts it automatically.
+You can use JSON Strings or arrays. The function will decrypts it automatically.
