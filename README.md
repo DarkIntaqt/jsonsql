@@ -1,6 +1,8 @@
-# JSON SQL
+### JSON SQL
 
-A function which allows to perform sql queries on json strings or arrays.
+## A function which allows to perform sql queries on json strings or arrays.
+
+<img src="https://darkintaqt.com/img/blog/jsonsqllogo.webp">
 
 The function works as follows:
 
