@@ -2,7 +2,7 @@
 
 ## A function which allows to perform sql queries on json strings or arrays.
 
-<img src="https://darkintaqt.com/img/blog/jsonsqllogo.webp">
+<img src="https://repository-images.githubusercontent.com/345436203/30d25080-83de-11eb-9ee4-7d6812b59d9a">
 
 The function works as follows:
 
